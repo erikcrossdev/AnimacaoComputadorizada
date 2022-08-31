@@ -40,6 +40,8 @@ Shader "CustomErikShaders/SpritesScrolling"
                 #pragma multi_compile_local _ PIXELSNAP_ON
                 #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
                 #include "UnitySprites.cginc"
+
+
             ENDCG
             }
         }

@@ -67,8 +67,6 @@ public class SeekBehaviour : MonoBehaviour
         float dist = Vector3.Distance(Target.position, transform.position);
         if (dist > 0.5f)
         {
-            //_velocity = Vector3.Normalize(Target.transform.position - transform.position) * _maxVelocity;
-
             _desiredVelocity = Vector3.Normalize(Target.transform.position - transform.position) * _maxVelocity;
             _steering = _desiredVelocity - _velocity;
 
@@ -83,6 +81,19 @@ public class SeekBehaviour : MonoBehaviour
         }
     }
 
+    private void UpdateSpriteRotation()
+    {
+        var angle = (Mathf.Rad2Deg * Mathf.Atan2(_velocity.y, _velocity.x)) - 90;
+        transform.eulerAngles = new Vector3(0, 0, angle);
+    }
+
+    private void UpdatePosition()
+    {
+
+        _velocity = Truncate(_velocity + _steering, (int)_maxSpeed);
+        transform.position = transform.position + _velocity * Time.deltaTime;
+        UpdateSpriteRotation();
+    }
     private void Flee()
     {
         float dist = Vector3.Distance(Target.position, transform.position);
@@ -95,12 +106,7 @@ public class SeekBehaviour : MonoBehaviour
             _steering = Vector3.ClampMagnitude(_steering, _maxForce);
             _steering = _steering / _mass;
 
-            //_velocity = Vector3.ClampMagnitude(_velocity + _steering, _maxSpeed);
-            _velocity = Truncate(_velocity + _steering, (int)_maxSpeed);
-            transform.position = transform.position + _velocity * Time.deltaTime;
-
-            var angle = (Mathf.Rad2Deg * Mathf.Atan2(_velocity.y, _velocity.x)) - 90;
-            transform.eulerAngles = new Vector3(0, 0, angle);
+            UpdatePosition();
 
         }
     }
@@ -124,34 +130,25 @@ public class SeekBehaviour : MonoBehaviour
         _steering = Vector3.ClampMagnitude(_steering, _maxForce);
         _steering = _steering / _mass;
 
-        _velocity = Truncate(_velocity + _steering, (int)_maxSpeed);
-        transform.position = transform.position + _velocity * Time.deltaTime;
-
-        var angle = (Mathf.Rad2Deg * Mathf.Atan2(_velocity.y, _velocity.x)) - 90;
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        UpdatePosition();
 
     }
 
     private void Wander()
     {
-       // float dist = Vector3.Distance(Target.position, transform.position);
-       // if (dist < 15.5f)
-       // {
-            _steering = CalculateWanderForce();
-            // Debug.Log(_steering);
-            _steering = Vector3.ClampMagnitude(_steering, _maxForce);
-            _steering = _steering / _mass;
-            _velocity = Vector3.ClampMagnitude(_velocity + _steering, _maxSpeed);
-            transform.position = transform.position + _velocity * Time.deltaTime;
+        _steering = CalculateWanderForce();
+        _steering = Vector3.ClampMagnitude(_steering, _maxForce);
+        _steering = _steering / _mass;
+        _velocity = Vector3.ClampMagnitude(_velocity + _steering, _maxSpeed);
+        transform.position = transform.position + _velocity * Time.deltaTime;
 
-            var angle = (Mathf.Rad2Deg * Mathf.Atan2(_velocity.y, _velocity.x)) - 90;
-            transform.eulerAngles = new Vector3(0, 0, angle);
-        //}
+        UpdateSpriteRotation();
+
     }
 
     private Vector3 CalculateWanderForce()
     {
-       var circleCenter = _velocity;
+        var circleCenter = _velocity;
         circleCenter = Vector3.Normalize(circleCenter);
         circleCenter = new Vector3(circleCenter.x * _circleDist, circleCenter.y * _circleDist, circleCenter.z * _circleDist);
 
@@ -175,23 +172,6 @@ public class SeekBehaviour : MonoBehaviour
         return vec;
     }
 
-    private Vector3 CircleWanderPosition(Vector3 circleCenter, float circleDist)
-    {
-        circleCenter = _velocity;
-        circleCenter = Vector3.Normalize(circleCenter);
-        circleCenter = new Vector3(circleCenter.x * circleDist, circleCenter.y * circleDist, circleCenter.z * circleDist);
-        return circleCenter;
-    }
-
-    private void DisplacementForce()
-    {
-        var displacement = new Vector3(0, -1);
-        displacement = new Vector3(displacement.x * _circleRadius, displacement.y * _circleRadius, displacement.z * _circleRadius);
-
-        SetAngle(displacement, _wanderAngle);
-
-        _wanderAngle += (Random.Range(0, 180) * _angleChange) - (_angleChange * 0.5f);
-    }
 
     private Vector3 SetAngle(Vector3 vector, float value)
     {
