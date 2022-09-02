@@ -15,6 +15,7 @@ public class DoPunchOnClick : MonoBehaviour
     [SerializeField] int vibrato = 10;
     [SerializeField] float elasticity = 1;
     [SerializeField] MeshRenderer potion;
+
     [SerializeField] Color newColor;
     [SerializeField] Color color;
 
@@ -26,7 +27,14 @@ public class DoPunchOnClick : MonoBehaviour
     [SerializeField] int camVibrato = 10;
     [SerializeField] float camStrength = 10;
     [SerializeField] float camRandomness = 90;
- 
+
+    [Header("Other")]
+    [SerializeField] float waitTime = 0.5f;
+    public SetMaterialProperty _Twirl;
+    [SerializeField] private Animator anim;
+    public MouseFollow _mouse;
+
+    private Coroutine _backToNormalRoutine;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +42,7 @@ public class DoPunchOnClick : MonoBehaviour
         originalScale = transform.localScale;
         originalPos = transform.position;
         originalRot = new Vector3(0,0,0);
+        anim.SetBool("Twirl", false);
 
     }
 
@@ -43,9 +52,14 @@ public class DoPunchOnClick : MonoBehaviour
 
     }
 
+
     private void OnMouseDown()
     {
+        _mouse.OnClickStaff(this);
+    }
 
+    public void DoPunch() {
+        anim.SetBool("Twirl", true);
         transform.DOKill();
         transform.localScale = originalScale;
         Debug.Log("ON MOUSE DOWN");
@@ -56,12 +70,24 @@ public class DoPunchOnClick : MonoBehaviour
         _particle.Play();
         potion.material.DOColor(newColor, duration).OnComplete(() =>
         {
-            transform.DOScale(originalScale, backToNormalDuration);
-            potion.material.DOColor(color, backToNormalDuration);
-            transform.DOMove(originalPos, 1f);
-            transform.DORotate(originalRot, 1f);
+            if (_backToNormalRoutine != null)
+            {
+                StopCoroutine(BackToNormalRoutine());
+            }
+            _backToNormalRoutine = StartCoroutine(BackToNormalRoutine());
+            anim.SetBool("Twirl", false);
         });
 
     }
+
+    private IEnumerator BackToNormalRoutine() {
+        yield return new WaitForSeconds(waitTime);
+        transform.DOKill();
+        transform.DOScale(originalScale, backToNormalDuration);
+        potion.material.DOColor(color, backToNormalDuration);
+        transform.DOMove(originalPos, 1f);
+        transform.DORotate(originalRot, 1f);
+
+    } 
 
 }
