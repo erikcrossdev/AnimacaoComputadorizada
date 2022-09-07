@@ -62,7 +62,6 @@ public class DoPunchOnClick : MonoBehaviour
         anim.SetBool("Twirl", true);
         transform.DOKill();
         transform.localScale = originalScale;
-        Debug.Log("ON MOUSE DOWN");
         transform.DOPunchScale(punch, duration, vibrato, elasticity);
         transform.DOShakeScale(duration, punch, vibrato, 90, true);
         transform.DOMove(punchPos, duration);

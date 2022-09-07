@@ -637,6 +637,22 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.016666668
+    functionName: PlaySoundOneShot
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 55bd636f62c888d47898bf898c890bdf,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.73333335
+    functionName: PlaySoundOneShot
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 98067c181198d814abe56262f5aaacfd,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.0666667
     functionName: DoShakeInTheEnd
     data: 

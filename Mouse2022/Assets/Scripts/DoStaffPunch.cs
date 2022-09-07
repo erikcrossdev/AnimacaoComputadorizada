@@ -11,6 +11,7 @@ public class DoStaffPunch : MonoBehaviour
     public GameObject staff;
     public DoPunchOnClick caulderon;
     // Start is called before the first frame update
+   
     void Start()
     {
         originalScale = staff.transform.lossyScale;
@@ -29,4 +30,6 @@ public class DoStaffPunch : MonoBehaviour
         });
         caulderon.DoPunch();
     }
+
+   
 }
