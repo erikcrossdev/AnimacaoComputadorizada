@@ -2,3 +2,10 @@
 IAProjects/Temp
 IAProjects/obj
 IAProjects/Library
+SoundAndAnimation/Library
+SoundAndAnimation/Temp
+SoundAndAnimation/UserSettings
+*.vsconfig
+SoundAndAnimation/SoundAndAnimation.sln
+SoundAndAnimation/Unity.CollabProxy.Editor.csproj
+*.csproj
