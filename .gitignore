@@ -9,3 +9,5 @@ SoundAndAnimation/UserSettings
 SoundAndAnimation/SoundAndAnimation.sln
 SoundAndAnimation/Unity.CollabProxy.Editor.csproj
 *.csproj
+SoundAndAnimation/.vs
+SoundAndAnimation/obj
