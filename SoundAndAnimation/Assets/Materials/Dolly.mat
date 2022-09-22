@@ -75,21 +75,21 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RippleDensity: 10.88
-    - _RippleSlimness: 6.71
+    - _RippleDensity: 8.7
+    - _RippleSlimness: 49.03
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 5.71
+    - _Speed: 2.83
     - _SrcBlend: 1
     - _TwirlStrength: 41.26
     - _UVSec: 0
     - _WaveDensity: 1.16
-    - _WaveSpeed: -1.6
+    - _WaveSpeed: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5372549, g: 0.34220147, b: 0.14509802, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RippleColor: {r: 0.9150943, g: 0.21490678, b: 0, a: 1}
+    - _RippleColor: {r: 1, g: 0.6708686, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2001035010543062305
 MonoBehaviour:

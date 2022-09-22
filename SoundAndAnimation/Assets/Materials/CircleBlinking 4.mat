@@ -92,7 +92,7 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.2
+    - _Speed: 2
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
