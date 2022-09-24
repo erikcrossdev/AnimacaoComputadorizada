@@ -21,6 +21,8 @@ public class CanvasController : MonoBehaviour
     [SerializeField] Animator Anim;
     [SerializeField] AudioSource SongSource;
     [SerializeField] TMP_Dropdown SongsDropdown;
+    [SerializeField] GameObject dollynho;
+    [SerializeField] GameObject shield;
 
     [SerializeField] Slider Pitch;
     [SerializeField] Slider Volume;
@@ -34,6 +36,7 @@ public class CanvasController : MonoBehaviour
     public const string OPEN_BOOL = "Open";
     void Start()
     {
+
         for (int i = 0; i < Songs.Count; i++)
         {
             _songNames.Add(Songs[i].SongName);
@@ -66,6 +69,11 @@ public class CanvasController : MonoBehaviour
     public void ResetPitch()
     {
         Pitch.value = 1.0f;
+    }
+
+    public void ResetDollyPosition() {
+        dollynho.transform.position = shield.transform.position;
+        dollynho.transform.rotation = shield.transform.rotation;
     }
 
     public void OnChangeVolume() {
