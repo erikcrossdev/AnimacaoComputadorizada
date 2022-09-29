@@ -6,6 +6,7 @@ using UnityEngine;
 public class ControlParticleBySound : MonoBehaviour
 {
     public ParticleSystem _particle;
+    public float GravityMultiplier;
     public float strength;
     public float speed;
     public Vector3 Axis;
@@ -19,17 +20,15 @@ public class ControlParticleBySound : MonoBehaviour
         _particle = GetComponent<ParticleSystem>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Amplitude = AudioPeer.Amplitude;
       
-        //randA = (Random.Range(0.1f, range) / range) / 10;
         Color = new Color(AudioPeer._audioBandBuffer[(int)Axis.x], AudioPeer._audioBandBuffer[(int)Axis.y], AudioPeer._audioBandBuffer[(int)Axis.z], randA);
         var main = _particle.main;
         main.simulationSpeed = Amplitude * speed;
         main.startColor = Color;
-        main.gravityModifier = Amplitude *strength;
+        main.gravityModifier = Amplitude *strength * GravityMultiplier;
         var noise = _particle.noise;
 
         noise.strength = Amplitude * strength;

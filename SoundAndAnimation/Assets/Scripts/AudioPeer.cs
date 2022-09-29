@@ -6,7 +6,6 @@ using UnityEngine;
 public class AudioPeer : MonoBehaviour
 {
      public  AudioSource _src;
-    AnimationCurve _curve;
     public static float[] _samples = new float[512];
     public static int Samples = 512;
 
@@ -82,18 +81,17 @@ public class AudioPeer : MonoBehaviour
 
     private void GetSpectrumAudioSource() {
         _src.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
-
-        _curve = _src.GetCustomCurve(AudioSourceCurveType.SpatialBlend);
     }
 
     private void MakeFrequencyBands() {
-        /* 20 - 60 hertz
-         * 60 - 250 hertz
-         * 250 - 500 hertz
-         * 500 - 2000 hertz
-         * 2000 - 4000 hertz
-         * 4000 - 6000 hertz
-         * 6000 - 20000 hertz
+        /* 
+         * [0]  -20 - 60 hertz
+         * [1] - 60 - 250 hertz
+         * [2] - 250 - 500 hertz
+         * [3] - 500 - 2000 hertz
+         * [4] - 2000 - 4000 hertz
+         * [5] - 4000 - 6000 hertz
+         * [6] - 6000 - 20000 hertz
         */
 
         int count = 0;

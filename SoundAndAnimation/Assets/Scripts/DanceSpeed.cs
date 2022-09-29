@@ -13,7 +13,7 @@ public class DanceSpeed : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,15 +24,13 @@ public class DanceSpeed : MonoBehaviour
         _anim.speed = Mathf.Abs(speed);
 
 
-        
-       
-            var clipInfo = _anim.GetCurrentAnimatorClipInfo(0);
-            if(LookFrontClips.Contains(clipInfo[0].clip)){
-                transformToLook.transform.LookAt(lookAt);
-                Debug.Log("TURN AROUND!!!");
-            }
+        var clipInfo = _anim.GetCurrentAnimatorClipInfo(0);
+        if (LookFrontClips.Contains(clipInfo[0].clip))
+        {
+            transformToLook.transform.LookAt(lookAt);
+        }
     }
 
 
-    
+
 }

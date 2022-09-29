@@ -22,10 +22,12 @@ public class CanvasController : MonoBehaviour
     [SerializeField] AudioSource SongSource;
     [SerializeField] TMP_Dropdown SongsDropdown;
     [SerializeField] GameObject dollynho;
+    [SerializeField] SetShaderProperty dollyMesh;
     [SerializeField] GameObject shield;
 
     [SerializeField] Slider Pitch;
     [SerializeField] Slider Volume;
+    [SerializeField] Slider DollyRotation;
 
     [SerializeField] List<ToggleObject> ToggleObjects = new List<ToggleObject>();
 
@@ -87,17 +89,18 @@ public class CanvasController : MonoBehaviour
             if (ToggleObjects[i].GameObject == obj) {
                 obj.SetActive(ToggleObjects[i].Toggle.isOn);
             }
-        }
-    
+        }    
     }
 
     public void OnButtonClick() {
         isPanelOpen = !isPanelOpen;
         Anim.SetBool(OPEN_BOOL, isPanelOpen);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    public void DeformDolly() {
+        float sliderValue = DollyRotation.value;
+        dollyMesh.MaxScale = sliderValue;
     }
+
+    public void ResetDeformation() { dollyMesh.MaxScale = -2; }
 }

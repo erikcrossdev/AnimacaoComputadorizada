@@ -13,20 +13,14 @@ public class SetShaderProperty : MonoBehaviour
     public Color Color;
     public bool setColor =false;
 
-    public float maxScale = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float MaxScale = -2;
+    public float DeformationScale = 1;
+  
     void Awake()
     {
-
         propertyBlock = new MaterialPropertyBlock();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         SetProperty();
@@ -34,9 +28,10 @@ public class SetShaderProperty : MonoBehaviour
 
     void SetProperty() {
         rend.GetPropertyBlock(propertyBlock, 0);
-        // propertyBlock.SetColor("_EmissionColor", new Color(1, 0.6f, 0.5f, 1));
-        propertyBlock.SetFloat(property, AudioPeer.AmplitudeBuffer * maxScale);       
-        if (setColor) SetColor();
+        propertyBlock.SetFloat(property, AudioPeer.AmplitudeBuffer * (MaxScale));
+        if (setColor) {
+            SetColor(); 
+        }
         rend.SetPropertyBlock(propertyBlock, 0);
     }
 
@@ -45,15 +40,11 @@ public class SetShaderProperty : MonoBehaviour
         Color = new Color(AudioPeer._audioBandBuffer[(int)AxisColor.x], AudioPeer._audioBandBuffer[(int)AxisColor.y], AudioPeer._audioBandBuffer[(int)AxisColor.z], 1);
         propertyBlock.SetColor(ColorProperty, Color);
     }
-
-
     private void Reset()
     {
-
         if (rend == null)
         {
             rend = GetComponent<Renderer>();
         }
-
     }
 }
