@@ -75,8 +75,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RippleDensity: 8.7
-    - _RippleSlimness: 49.03
+    - _RippleDensity: 8.75
+    - _RippleSlimness: 2.42
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 2.83

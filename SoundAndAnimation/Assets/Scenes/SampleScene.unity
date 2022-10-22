@@ -11830,18 +11830,34 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 7da970c003dcd35459a12e584d0ad220, type: 3}
   - SongName: Descobridor dos Sete Mares
     Clip: {fileID: 8300000, guid: be802cc16c585834f911cc16da30c64f, type: 3}
-  - SongName: Toxic
+  - SongName: Toxic - Britney Spears
     Clip: {fileID: 8300000, guid: 4efb20f28efc79343854c6cca3d56415, type: 3}
-  - SongName: "Dolly Guaran\xE1 Remix"
-    Clip: {fileID: 8300000, guid: ea518afdf65706a4b925d6f135a5b205, type: 3}
-  - SongName: I want to Break Free
+  - SongName: 'I Want To Break Free - Queen '
     Clip: {fileID: 8300000, guid: 56a93cd30f60e1c4f9a675fc8f22993c, type: 3}
-  - SongName: In the Hall of the Mountain King
-    Clip: {fileID: 8300000, guid: 44c35342bcd859744944ed311391fb35, type: 3}
+  - SongName: 5th Symphony - Beethoven
+    Clip: {fileID: 8300000, guid: 8191b2195669fb54cb108a9842d80cbb, type: 3}
   - SongName: "Ausl\xE4nder"
     Clip: {fileID: 8300000, guid: 881179afd7d9d204fa15c63ef5a1959f, type: 3}
   - SongName: Boys Dont Cry
     Clip: {fileID: 8300000, guid: a1b9389b4169d074780e7f2b1ceaffb8, type: 3}
+  - SongName: Dancing Queen - ABBA
+    Clip: {fileID: 8300000, guid: 7e9e175244ecdad43aee1d279c2dcc20, type: 3}
+  - SongName: 1812 Overture - Tchaikovsky
+    Clip: {fileID: 8300000, guid: 5a910eb9c26146143aaf3d2d40420645, type: 3}
+  - SongName: Paranoid - Black Sabbath
+    Clip: {fileID: 8300000, guid: d9e25c4de2ead6847b1e38b8476aee22, type: 3}
+  - SongName: Levan Polkka
+    Clip: {fileID: 8300000, guid: 208e5d1e9c276144999330e3c7c65b53, type: 3}
+  - SongName: "L\xE9sbica Futurista "
+    Clip: {fileID: 8300000, guid: 3ebfab4e1c042d04eb54a51af950253e, type: 3}
+  - SongName: Don't Stop Belivin' - Journey
+    Clip: {fileID: 8300000, guid: 1bcb72b4b9f26df4abb8b4ee1e41415d, type: 3}
+  - SongName: Enter Sandman - Metallica
+    Clip: {fileID: 8300000, guid: 540d063dab6a4d34b95df214ab4a1d2d, type: 3}
+  - SongName: Wannabe - Spice Girls
+    Clip: {fileID: 8300000, guid: 3d4a50eeb03c87141bef115cc3607674, type: 3}
+  - SongName: "Dolly Guaran\xE1 Remix"
+    Clip: {fileID: 8300000, guid: ea518afdf65706a4b925d6f135a5b205, type: 3}
 --- !u!114 &1111293686
 MonoBehaviour:
   m_ObjectHideFlags: 0
