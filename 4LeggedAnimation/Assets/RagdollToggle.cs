@@ -9,45 +9,48 @@ public class RagdollToggle : MonoBehaviour
     [SerializeField] protected BoxCollider BoxCollider;
 
     public GameObject root;
+    private Vector3 _pos;
+    private Vector3 _rot;
 
-    private bool activate = false;
+    private bool activate = true;
 
     [SerializeField] protected List<Rigidbody> Rigidbodies;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _pos = root.transform.position;
+        _rot = root.transform.eulerAngles;
         // Animator = GetComponent<Animator>();
         // Rigidbody = GetComponent<Rigidbody>();
         // BoxCollider = GetComponent<BoxCollider>();
-        RagdollActive(activate);
+        AnimationActive(activate);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            activate = !activate;
+            AnimationActive(activate);
+        }
     }
 
-    public void RagdollActive(bool active) {
-        Animator.enabled = !active;
-        Rigidbody.detectCollisions = !active;
-        Rigidbody.isKinematic = !active;
-        BoxCollider.enabled = !active;
+    public void AnimationActive(bool active) {
+        Animator.enabled = active;
+        Rigidbody.detectCollisions = active;
+        Rigidbody.isKinematic = active;
+        BoxCollider.enabled = active;
 
         for (int i = 0; i < Rigidbodies.Count; i++)
         {
-            Rigidbodies[i].isKinematic = !active;
+            Rigidbodies[i].isKinematic = active;
+        }
+        if (active) {
+            root.transform.position = _pos;
+            root.transform.eulerAngles = _rot;
         }
     }
 
-    private void OnGUI()
-    {
-        if (GUILayout.Button("RagdollActive"))
-        {
-            activate = !activate;
-            RagdollActive(activate);
-        }
-    }
 }
