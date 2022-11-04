@@ -11,3 +11,13 @@ SoundAndAnimation/Unity.CollabProxy.Editor.csproj
 *.csproj
 SoundAndAnimation/.vs
 SoundAndAnimation/obj
+4LeggedAnimation/.vs/4LeggedAnimation/v16/.suo
+4LeggedAnimation/Library
+4LeggedAnimation/obj
+4LeggedAnimation/4LeggedAnimation.sln
+4LeggedAnimation/Temp
+MonoBleedingEdge
+MachineLearningProj/Library
+MachineLearningProj/Temp
+MachineLearningProj/MachineLearningProj.sln
+MachineLearningProj/obj
