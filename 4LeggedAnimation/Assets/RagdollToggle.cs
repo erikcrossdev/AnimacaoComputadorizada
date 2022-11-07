@@ -14,6 +14,8 @@ public class RagdollToggle : MonoBehaviour
 
     private bool activate = true;
 
+    [SerializeField] private float _timeToEnableRagdoll;
+
     [SerializeField] protected List<Rigidbody> Rigidbodies;
 
     // Start is called before the first frame update
@@ -31,10 +33,24 @@ public class RagdollToggle : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        {            
             activate = !activate;
-            AnimationActive(activate);
+            if (!activate)
+            {
+                Animator.SetTrigger("Die");
+                StartCoroutine(WaitForSecondsToEnableRagDoll());
+            }
+            else
+            {
+                Animator.SetTrigger("Revive");
+                AnimationActive(activate);
+            }
         }
+    }
+
+    IEnumerator WaitForSecondsToEnableRagDoll() {
+        yield return new WaitForSeconds(_timeToEnableRagdoll);
+        AnimationActive(activate);
     }
 
     public void AnimationActive(bool active) {
