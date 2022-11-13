@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: aa136b09372d45f47bb8dff64a61407f
+guid: 51981fcb918781443a851aa9bdf33862
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
+  - first:
+      74: 5373825696924028951
+    second: CT_Armature|T-Pose
   - first:
       74: -203655887218126122
     second: mixamo.com
@@ -37,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
