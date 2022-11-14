@@ -580,9 +580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Run
-
-'
+  m_text: Crouch
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -716,7 +714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Walk Back
+  m_text: 'Jump
 
 '
   m_isRightToLeft: 0
@@ -1337,7 +1335,7 @@ GameObject:
   - component: {fileID: 696581663}
   - component: {fileID: 696581662}
   m_Layer: 5
-  m_Name: Run
+  m_Name: Crouch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,7 +1390,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1173970829}
         m_TargetAssemblyTypeName: AnimationLayerController, Assembly-CSharp
-        m_MethodName: Run
+        m_MethodName: Crouch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2547,8 +2545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1173970828}
   _idle: {fileID: 603135069}
-  _walkBack: {fileID: 1940159111}
-  _run: {fileID: 696581662}
+  _jump: {fileID: 1940159111}
+  _crouch: {fileID: 696581662}
   _sit: {fileID: 112774288}
   _rifle: {fileID: 1428065197}
   _waveBoth: {fileID: 1498774332}
@@ -3988,7 +3986,7 @@ GameObject:
   - component: {fileID: 1940159112}
   - component: {fileID: 1940159111}
   m_Layer: 5
-  m_Name: WalkBack
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4043,7 +4041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1173970829}
         m_TargetAssemblyTypeName: AnimationLayerController, Assembly-CSharp
-        m_MethodName: WalkBack
+        m_MethodName: Jump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

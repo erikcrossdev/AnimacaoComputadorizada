@@ -8,8 +8,8 @@ public class AnimationLayerController : MonoBehaviour
     [SerializeField] Animator _animator;
 
     [SerializeField] Toggle _idle;
-    [SerializeField] Toggle _walkBack;
-    [SerializeField] Toggle _run;
+    [SerializeField] Toggle _jump;
+    [SerializeField] Toggle _crouch;
     [SerializeField] Toggle _sit;
 
     [SerializeField] Toggle _rifle;
@@ -18,8 +18,8 @@ public class AnimationLayerController : MonoBehaviour
     [SerializeField] Toggle _shoot;
 
     public const string IDLE = "Idle";
-    public const string WALK_BACK = "WalkBack";
-    public const string RUN = "Run";
+    public const string JUMP = "Jump";
+    public const string CROUCH = "Crouch";
     public const string SIT = "Sit";
 
     public const string RIFLE = "Rifle";
@@ -58,8 +58,8 @@ public class AnimationLayerController : MonoBehaviour
     {
         if (_idle.isOn)
         {
-            _walkBack.isOn = false;
-            _run.isOn = false;
+            _jump.isOn = false;
+            _crouch.isOn = false;
             _sit.isOn = false;
             if (!AnimatorIsPlaying(IDLE))
             {
@@ -69,25 +69,25 @@ public class AnimationLayerController : MonoBehaviour
         }
     }
 
-    public void WalkBack()
+    public void Jump()
     {
-        if (_walkBack.isOn)
+        if (_jump.isOn)
         {
             _idle.isOn = false;
-            _run.isOn = false;
+            _crouch.isOn = false;
             _sit.isOn = false;
-            _animator.SetTrigger(WALK_BACK);
+            _animator.SetTrigger(JUMP);
         }
     }
 
-    public void Run()
+    public void Crouch()
     {
-        if (_run.isOn)
+        if (_crouch.isOn)
         {
-            _walkBack.isOn = false;
+            _jump.isOn = false;
             _idle.isOn = false;
             _sit.isOn = false;
-            _animator.SetTrigger(RUN);
+            _animator.SetTrigger(CROUCH);
         }
     }
 
@@ -95,9 +95,9 @@ public class AnimationLayerController : MonoBehaviour
     {
         if (_sit.isOn)
         {
-            _walkBack.isOn = false;
+            _jump.isOn = false;
             _idle.isOn = false;
-            _run.isOn = false;
+            _crouch.isOn = false;
             _animator.SetTrigger(SIT);
         }
     }
