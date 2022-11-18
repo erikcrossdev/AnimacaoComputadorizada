@@ -29,6 +29,8 @@ public class AnimationLayerController : MonoBehaviour
 
     public Animation IdleClip;
 
+    public FollowBone Chair;
+
 
     // Start is called before the first frame update
     void Start()
@@ -156,4 +158,32 @@ public class AnimationLayerController : MonoBehaviour
     {
 
     }
+
+
+    public void SpawnChair(int value)
+    {
+        if (value == 1)
+        {
+            Chair.SetActive(true);
+        }
+        else
+        {
+            Chair.SetActive(false);
+        }
+
+        Debug.Log("CHAMOU SpawnChair "+value);
+    }
+
+    public void ChairComeCloser(int value)
+    {
+        Debug.Log("CHAMOU ChairComeCloser "+value);
+        if (value == 1) {
+            Chair.SetFollow(true);
+        } else {
+            Chair.SetFollow(false);
+        }
+
+
+    }
+    
 }
