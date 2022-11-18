@@ -90,12 +90,12 @@ public class EggRacer : Agent
             Mathf.Abs(ball.transform.position.x - gameObject.transform.position.x) > 3f ||
             Mathf.Abs(ball.transform.position.z - gameObject.transform.position.z) > 3f)
         {
-            SetReward(-1f);
+            SetReward(-5f);
             EndEpisode();
         }
         else
         {
-            SetReward(0.1f);
+            SetReward(0.25f);
         }
 
        
@@ -111,7 +111,7 @@ public class EggRacer : Agent
         // square the distance we compare with
         if (sqrLen < _oldDist * _oldDist)
         {
-            Debug.Log("Got Closer, old dist was: " + _oldDist);
+           // Debug.Log("Got Closer, old dist was: " + _oldDist);
             _oldDist -= 5f;
             //Debug.Log("old now: " + _oldDist);
             SetReward(1f);
