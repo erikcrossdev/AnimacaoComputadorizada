@@ -44,7 +44,6 @@ public class CameraMovement : MonoBehaviour
 
             Quaternion rotation = Quaternion.Euler(y, x, 0.0f);
             Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position;
-
             transform.rotation = rotation;
             transform.position = position;
         }
@@ -52,11 +51,11 @@ public class CameraMovement : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (Input.GetKeyDown(KeyCode.Z)) {
             var currentIndex = _index;
             _index = (currentIndex - 1) % _targets.Count;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             var currentIndex = _index;
             _index = (currentIndex + 1) % _targets.Count;
