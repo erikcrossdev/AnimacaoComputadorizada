@@ -88,7 +88,8 @@ public class EggRacer : Agent
         }
         if ((ball.transform.position.y - gameObject.transform.position.y) < -2f ||
             Mathf.Abs(ball.transform.position.x - gameObject.transform.position.x) > 3f ||
-            Mathf.Abs(ball.transform.position.z - gameObject.transform.position.z) > 3f)
+            Mathf.Abs(ball.transform.position.z - gameObject.transform.position.z) > 3f ||
+            (gameObject.transform.position.y - goal.transform.position.y) < -3f)
         {
             SetReward(-5f);
             EndEpisode();
@@ -136,8 +137,6 @@ public class EggRacer : Agent
         var rotateDir = Vector3.zero;
 
         var action = act[0];
-
-        //dirToGo = transform.forward * 1f;
         
         switch (action)
         {

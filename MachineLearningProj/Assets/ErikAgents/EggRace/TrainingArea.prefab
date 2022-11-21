@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EggRacer
       objectReference: {fileID: 0}
+    - target: {fileID: 2723120222396120270, guid: 0c88b6c6d9347be46924a1b7c66255d3, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: a8ada30bfe1e554439697b760e1b6a5e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c88b6c6d9347be46924a1b7c66255d3, type: 3}
 --- !u!4 &1853677827261690517 stripped
