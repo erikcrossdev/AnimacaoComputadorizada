@@ -1474,10 +1474,10 @@ MonoBehaviour:
     <color="red">Scroll
     </color> - Zoom
 
-    <color="red">Left/Right Mouse Click </color>- Change Camera
-    focus
+    <color="red">Z/X </color>- Change Camera focus
 
-    <color="red">Space </color> - Toggle Ragdoll On/Off
+    <color="red">Space
+    </color> - Toggle Ragdoll On/Off
 
 
 '

@@ -30,6 +30,7 @@ public class AnimationLayerController : MonoBehaviour
     public Animation IdleClip;
 
     public FollowBone Chair;
+    public GameObject gun;
 
 
     // Start is called before the first frame update
@@ -184,6 +185,17 @@ public class AnimationLayerController : MonoBehaviour
         }
 
 
+    }
+
+    public void SetGunActive(int value) {
+        if (value == 1)
+        {
+            gun.SetActive(true);
+        }
+        else
+        {
+            gun.SetActive(false);
+        }
     }
     
 }
