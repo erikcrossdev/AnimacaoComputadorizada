@@ -190,7 +190,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: bda13b40489a9f741a6553dd2e5e1ab6, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 00ae58abeb74b70488f69dd5d0c97699, type: 3}
   m_InferenceDevice: 2
   m_BehaviorType: 0
   m_BehaviorName: EggRace
