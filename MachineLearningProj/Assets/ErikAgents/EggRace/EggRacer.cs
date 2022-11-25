@@ -126,7 +126,7 @@ public class EggRacer : Agent
 
         // By marking an agent as done AgentReset() will be called automatically.
         EndEpisode();
-        Debug.Log("GOAL SCORED!!!!!");
+        //Debug.Log("GOAL SCORED!!!!!");
         // Swap ground material for a bit to indicate we scored.
         StartCoroutine(GoalScoredSwapGroundMaterial(_eggRaceSettings.goalScoredMaterial, 0.5f));
     }
